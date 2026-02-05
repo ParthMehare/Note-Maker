@@ -1,0 +1,288 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: radial-gradient(circle at top, #2b2b2b, #0f0f0f);
+  color: #e5e7eb;
+}
+.form-container {
+  width: 360px;
+  padding: 28px;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+
+.form-container h2 {
+  margin-bottom: 18px;
+  font-size: 20px;
+}
+label {
+  font-size: 13px;
+  opacity: 0.8;
+}
+input {
+  width: 100%;
+  margin: 6px 0 14px;
+  padding: 10px 14px;
+
+  border-radius: 999px;
+  border: none;
+  outline: none;
+
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 13px;
+}
+
+/* CATEGORY PILLS */
+.category {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+.category label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  cursor: pointer;
+
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.05);
+
+  transition: all 0.25s ease;
+}
+
+.category input {
+  display: none;
+}
+
+/* =========================
+   SELECTED STATE (IMPORTANT)
+   ========================= */
+
+.category input:checked + span {
+  color: white;
+  font-weight: 600;
+}
+
+/* Emergency glow */
+.emergency input:checked + span {
+  background: rgba(239,68,68,0.25);
+  padding: 4px 10px;
+  border-radius: 999px;
+  box-shadow: 0 0 10px rgba(239,68,68,0.6);
+}
+
+/* Important glow */
+.important input:checked + span {
+  background: rgba(249,115,22,0.25);
+  padding: 4px 10px;
+  border-radius: 999px;
+  box-shadow: 0 0 10px rgba(249,115,22,0.6);
+}
+
+/* Urgent glow */
+.urgent input:checked + span {
+  background: rgba(168,85,247,0.25);
+  padding: 4px 10px;
+  border-radius: 999px;
+  box-shadow: 0 0 10px rgba(168,85,247,0.6);
+}
+
+/* No Rush glow */
+.norush input:checked + span {
+  background: rgba(34,197,94,0.25);
+  padding: 4px 10px;
+  border-radius: 999px;
+  box-shadow: 0 0 10px rgba(34,197,94,0.6);
+}
+
+/* BUTTONS */
+.btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 10px;
+
+  transition: 0.25s ease;
+}
+
+/* CREATE */
+.create {
+  background: linear-gradient(to right, #111, #000);
+  color: white;
+}
+
+.create:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+/* CLOSE */
+.close {
+  background: linear-gradient(to right, #7f0000, #b30000);
+  color: white;
+}
+
+.close:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(179,0,0,0.6);
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ===== LEFT BUTTONS ===== */
+.side-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.side-buttons button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,0.08);
+  color: white;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.side-buttons button:hover {
+  background: rgba(255,255,255,0.2);
+  transform: scale(1.1);
+}
+
+/* ===== CARD ===== */
+.card {
+  width: 260px;
+  padding: 18px;
+  border-radius: 18px;
+  position: relative;
+
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  transition: 0.4s ease;
+}
+
+/* COLOR STRIP (changes with category) */
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  border-radius: 18px 0 0 18px;
+  background: var(--accent, #666);
+  transition: 0.4s ease;
+}
+
+/* ===== PROFILE ===== */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ===== TEXT ===== */
+.name {
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.info {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-top: 6px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ===== ACTIONS ===== */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.actions button {
+  flex: 1;
+  padding: 6px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.call {
+  background: black;
+  color: white;
+}
+
+.msg {
+  background: transparent;
+  color: #aaa;
+}
+
+/* ===== COLOR DOTS ===== */
+.colors {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.dot:hover {
+  transform: scale(1.2);
+}
+
+/* CATEGORY COLORS */
+.emergency { background: #ef4444; }
+.important { background: #f97316; }
+.urgent    { background: #a855f7; }
+.norush    { background: #14b8a6; }

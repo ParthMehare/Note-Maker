@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note Maker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="form-container" hidden>
+      <form>
+        <h2>New Call</h2>
+        <label for="link">Image URL</label>
+        <input
+          id="link"
+          type="text"
+          placeholder="https.//example.com/photo.jpg"
+        />
+
+        <label for="name">Full Name</label>
+        <input id="name" type="text" placeholder="Enter Full Name" />
+
+        <label for="home">Home Town</label>
+        <input id="home" type="text" placeholder="Enter Home Town" />
+
+        <label for="purpose">Purpose</label>
+        <input
+          id="purpose"
+          type="text"
+          placeholder="Enter eg, Quick appointment note"
+        />
+
+        <label for="category">Category</label>
+        <label>Category</label>
+        <div class="category">
+          <label class="emergency">
+            <input type="radio" name="cat" />
+            <span>Emergency</span>
+          </label>
+
+          <label class="important">
+            <input type="radio" name="cat" />
+            <span>Important</span>
+          </label>
+
+          <label class="urgent">
+            <input type="radio" name="cat" />
+            <span>Urgent</span>
+          </label>
+
+          <label class="norush">
+            <input type="radio" name="cat" />
+            <span>No Rush</span>
+          </label>
+        </div>
+        <button class="btn create">Create Note</button>
+        <button class="btn close">Close</button>
+      </form>
+    </div>
+
+
+    <div class="wrapper">
+      <!-- LEFT BUTTONS -->
+      <div class="side-buttons">
+        <button>+</button>
+        <button>↑</button>
+        <button>↓</button>
+      </div>
+
+      <!-- CARD -->
+      <div class="card" id="card">
+        <div class="profile">
+          <img src="https://i.pravatar.cc/100" />
+          <div>
+            <div class="name">Fatima Uma</div>
+          </div>
+        </div>
+
+        <div class="info">
+          <span>Home town</span>
+          <span>Singapore</span>
+        </div>
+
+        <div class="info">
+          <span>Bookings</span>
+          <span>3 times</span>
+        </div>
+
+        <div class="actions">
+          <button class="call">📞 Call</button>
+          <button class="msg">Message</button>
+        </div>
+      </div>
+
+      <!-- COLOR SELECT -->
+      <div class="colors">
+        <div class="dot emergency" onclick="setColor('#ef4444')"></div>
+        <div class="dot urgent" onclick="setColor('#a855f7')"></div>
+        <div class="dot important" onclick="setColor('#f97316')"></div>
+        <div class="dot norush" onclick="setColor('#14b8a6')"></div>
+      </div>
+    </div>
+  </body>
+</html>
